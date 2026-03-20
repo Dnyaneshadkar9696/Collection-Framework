@@ -17,6 +17,8 @@ public class Questions {
 		this.checkElementExist();
 		System.out.println();
 		this.removeElement();
+		System.out.println();
+		this.totalNumElementsInSet();
 	}
 
 	public void hashSetCreate() {
@@ -123,5 +125,21 @@ public class Questions {
 			
 			System.out.println(ob);
 		}
+	}
+
+	// Find total number of elements in a Set.
+
+	public void totalNumElementsInSet(){
+
+		HashSet se = new HashSet();
+		se.add(23);
+		se.add(43);
+		se.add(76);
+		int count = 0;
+
+		for(Object s  : se ){
+			count++;
+		}
+		System.out.println("The count of elements in the Set is : "+ count);
 	}
 }
