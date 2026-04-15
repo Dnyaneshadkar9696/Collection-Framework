@@ -87,6 +87,98 @@ public class Ecommerce {
 
 	}
 
+	//	Sort products by price (ascending & descending)
+	
+	public void productSort() {
+		
+		ArrayList<Product> q = new ArrayList<Product>();
+
+		q.add(new Product("laptop", 50000));
+		q.add(new Product("mobile", 44000));
+		q.add(new Product("headphone", 47000));
+		q.add(new Product("tablet", 76000));
+		q.add(new Product("ac", 57000));
+		q.add(new Product("router", 5000));
+		q.add(new Product("pendrive", 500));
+		
+		Collections.sort(q, (a,b) -> a.price - b.price);
+		
+		// lambda expression used here
+//		it is shortcut to get the comparator
+		
+		System.out.println("Ascendig order : ");
+		for(Product df : q){
+			System.out.println(df);
+		}
+		
+		System.out.println("Descending order: ");
+		Collections.sort(q, (a,b) -> b.price - a.price);
+		
+	    for(Product ds : q) {
+	    	System.out.println(ds);
+	    }
+		
+		
+		
+	}
+	
+	
+	
+	
+//	Filter products with price > 500
+	
+	public void priceFilter() {
+		ArrayList<Product> c = new ArrayList<Product>();
+
+		c.add(new Product("laptop", 50000));
+		c.add(new Product("mobile", 44000));
+		c.add(new Product("headphone", 47000));
+		c.add(new Product("tablet", 76000));
+		c.add(new Product("ac", 57000));
+		c.add(new Product("router", 5000));
+		c.add(new Product("pendrive", 500));
+		
+		System.out.println("Products with the price greater than 500 : ");
+		for(Product u : c) {
+			if(u.price > 500) {
+				System.out.println(u);
+			}
+		}
+		
+	}
+	
+	//Remove duplicate product names
+	
+	public void removeDuplicateProducts() {
+		
+		ArrayList<Product> k = new ArrayList<Product>();
+
+		k.add(new Product("laptop", 50000));
+		k.add(new Product("mobile", 44000));
+		k.add(new Product("headphone", 47000));
+		k.add(new Product("tablet", 76000));
+		k.add(new Product("ac", 57000));
+		k.add(new Product("ac", 5000));
+		k.add(new Product("pendrive", 500));
+		
+		
+		ArrayList<String> uniq = new ArrayList<String>();
+		
+		Iterator<Product> p = k.iterator();
+		System.out.println("Unique elements : ");
+		while(p.hasNext()) {
+			
+			Product y = p.next();
+			
+			if(!uniq.contains(y.name)) {
+				uniq.add(y.name);
+				System.out.println(y);
+			}
+			
+			
+		}
+	}
+
 }
 
 class Product {
